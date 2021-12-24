@@ -1,10 +1,11 @@
 import React from 'react';
-import { useHistory } from 'react-router';
+import { useHistory, useLocation } from 'react-router';
 
 function DeckCover({ image, name, id }) {
   const history = useHistory();
+  const location = useLocation();
   const click = () => {
-    history.push(`/decks/${id}`)
+    if (location.pathname === '/decks') history.push(`/decks/${id}`);
   }
   return(
     <div className="coverContainer" onClick={ click }>

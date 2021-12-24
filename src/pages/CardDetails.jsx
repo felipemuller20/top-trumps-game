@@ -1,9 +1,9 @@
-import React, { useContext, useState } from 'react';
-import DeckContext from '../context/DeckContext';
-import { fetchCards } from '../services/fetchApi';
+import React, { useState } from 'react';
+import { fetchCards, fetchDeckId } from '../services/fetchApi';
+import DeckCover from '../components/DeckCover';
 
 function CardDetails({ match: { params: { id } } }) {
-  const { decks } = useContext(DeckContext);
+  const [deck, setDeck] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [cards, setCards] = useState([]);
 
@@ -16,7 +16,15 @@ function CardDetails({ match: { params: { id } } }) {
   }, []);
 
   useState(() => {
-    if (cards.length > 0) {
+    const getDeckById = async () => {
+      const result = await fetchDeckId(id);
+      setDeck(result);
+    }
+    getDeckById();
+  }, []);
+
+  useState(() => {
+    if (cards.length > 0 && deck.length > 0) {
       setIsLoading(false);
     } else {
       setIsLoading(true);
@@ -24,7 +32,18 @@ function CardDetails({ match: { params: { id } } }) {
   }, [cards])
 
   return(
-    <h1>Detalhes {typeof id}</h1>
+    <>
+      <header>
+        <h1>Super Trunfo!</h1>
+        <DeckCover
+          image={ deck.coverImg }
+          name={ deck.name }
+        />
+      </header>
+      <body className="cards-container">
+
+      </body>
+    </>
   )
 }
 

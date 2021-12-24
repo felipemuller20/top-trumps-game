@@ -15,3 +15,8 @@ export const fetchCards = async () => {
   const result = await api.get('/cards');
   return result.data;
 }
+
+export const fetchDeckId = async (id) => {
+  const result = await api.get(`/deck/${id}`)
+  return result.data;
+}
