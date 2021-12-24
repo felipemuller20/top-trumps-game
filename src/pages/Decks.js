@@ -26,11 +26,12 @@ function Decks() {
 
   return(
     <>
-      <h1>Super Trunfo</h1>
-      <h2>Selecione um baralho abaixo ou { <Link to="/new-deck">Clique aqui</Link> }&nbsp; 
+      <h1 className="mainTitle">Super Trunfo</h1>
+      <h2 className="mainSub">Selecione um baralho abaixo ou&nbsp;
+      { <Link to="/new-deck">Clique aqui</Link> }&nbsp; 
         para criar um novo!
       </h2>
-      <div>
+      <div className="decksContainer">
         {
           isLoading ? 'Carregando baralhos...' : (
             decks.map((deck, index) => (
