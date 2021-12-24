@@ -39,6 +39,7 @@ function Decks() {
                 key={ index }
                 name={ deck.name }
                 image={ deck.coverImg }
+                id={ deck.id }
               />
             ))
           )
