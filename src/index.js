@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 import DeckProvider from './context/DeckProvider';
 
 ReactDOM.render(
   <React.StrictMode>
-    <DeckProvider>
-      <App />
-    </DeckProvider>
+    <BrowserRouter>
+      <DeckProvider>
+        <App />
+      </DeckProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );

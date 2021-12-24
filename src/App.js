@@ -1,12 +1,14 @@
 import React from 'react';
+import { Switch, Route } from "react-router-dom";
+import CreateDeck from './pages/CreateDeck';
+import Decks from './pages/Decks';
 
 function App() {
   return (
-    <div>
-      <h1>
-        Hello World
-      </h1>
-    </div>
+    <Switch>
+      <Route exact path="/" component={ Decks } />
+      <Route path="/new-deck" component={ CreateDeck } />
+    </Switch>
   );
 }
 
