@@ -21,15 +21,16 @@
   font-size: 4vw;
 }
 
-.decksContainer {
+.decksContainer, .cards-container {
   display: flex;
   justify-content: space-evenly;
   border-style: double;
   background-color: #b1a7a6;
   margin: 45px;
+  flex-wrap: wrap;
 }
 
-.coverContainer {
+.coverContainer, .card-container {
   border: 3px solid black;
   width: 350px;
   height: 250px;
@@ -51,4 +52,28 @@
   height: cover;
   min-height: 37px;
   font-size: 25px;
+}
+
+.card-container {
+  height: 450px;
+}
+
+.card-img {
+  /* width: 100%;
+  max-height: 60%;
+  min-height: 85%;
+  display: block;
+  margin: auto; */
+}
+
+.stats-container {
+
+}
+
+.stats {
+
+}
+
+.description {
+
 }

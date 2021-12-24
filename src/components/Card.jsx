@@ -4,13 +4,14 @@ function Card({ image, name, attr1, attr2, attr3, attr1Stat, attr2Stat, attr3Sta
     description, trump }) {
   return (
     <div className="card-container">
-      <img src={ image } alt={`${name} cover`} />
+      <img src={ image } alt={`${name} cover`} className="card-img"/>
+      <h3>{name}</h3>
       <div className="stats-container">
-        <p>{attr1}: {attr1Stat}</p>
-        <p>{attr2}: {attr2Stat}</p>
-        <p>{attr3}: {attr3Stat}</p>
+        <p className="stats">{attr1}: {attr1Stat}</p>
+        <p className="stats">{attr2}: {attr2Stat}</p>
+        <p className="stats">{attr3}: {attr3Stat}</p>
       </div>
-      <p>{description}</p>
+      <p className="description">{description}</p>
       {trump && '⭐'}
     </div>
   )
